@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integración de iFrame</title>
+<style>
+  body {
+    background-color: #1a1a2e; /* Azul oscuro */
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  .iframe-container {
+    width: 100%;
+    height: 70vh; /* Ajusta esto según tus necesidades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+
+  .iframe-wrapper {
+    width: 100%; /* Ajusta esto según tus necesidades */
+    height: 100%; /* Ajusta esto según tus necesidades */
+    border-radius: 25px; /* Esquinas redondeadas tipo tarjeta */
+    overflow: hidden;
+    border: 7px solid #1e3c72; /* Borde blanco que se asemeja al borde de una tarjeta */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1), /* Sombra pequeña */
+                0 12px 40px rgba(0, 0, 0, 1); /* Sombra más grande */
+    background: linear-gradient(145deg, #1e3c72, #2a5298); /* Degradado para el borde */
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Eliminar el borde por defecto del iframe */
+  }
+</style>
+</head>
+<body>
+<div class="iframe-container">
+  <div class="iframe-wrapper">
+    <iframe src="https://idcardtonivr.netlify.app/"></iframe>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+---
+const personalImageAlt = "Miguel Ángel"
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import Embed from '../components/Embed.astro';
+---
+
+<style>
+  .dynamic-text {
+    font-style: italic;
+    font-size: 18px;
+    color: rgb(107, 90, 182);
+    animation: heartbeat 5s infinite;
+    transform: rotate(-5deg);
+    opacity: 1;
+    margin-bottom: 10px;
+  }
+
+  @keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+
+
+
+
+
+  .embed-wrapper:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .badge:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .content {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .highlight {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .emoji {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.1em;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><text y="64" font-size="64">😋</text></svg>') no-repeat;
+    background-size: contain;
+  }
+
+  .social-pills {
+    gap: 16px;
+    position: relative;
+  }
+
+  .social-pills a {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  .social-pills a:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+
+  .preview {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 0;
+  }
+
+  .social-pills a:hover .preview {
+    opacity: 1;
+    transform: translateY(-5);
+  }
+
+  .preview-contact {
+    text-align: center;
+    width: 200px;
+  }
+
+  .preview-linkedin {
+    text-align: center;
+  }
+
+  .preview-linkedin img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .preview-linkedin .name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .preview-linkedin .title {
+    font-size: 14px;
+  }
+</style>
+
+<div class="max-w-7xl mx-auto">
+  
+  <div class="content">
+    
+    <div class="flex flex-col md:flex-row gap-4 mb-4 items-start">
+      <div class="flex flex-col items-center md:items-start">
+        <p class="dynamic-text mt-4">Psst... try dragging and dropping the card!</p>
+        <div class="embed-wrapper">
+          
+          <Embed />
+          
+        </div>
+        <a
+          href="https://www.linkedin.com/in/tonivieirarubio-informatico/"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center transition md:justify-center badge mt-4"
+        >
+          <Badge>Available to work</Badge>
+        </a>
+        
+      </div>
+      <div class="flex-1">
+        <h1 class="text-5xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white">
+          Hello 👋, I am <span class="highlight">Toni <span class="emoji"></span></span>
+        </h1>
+        <p class="mt-6 text-2xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
+          <strong>Frontend and BlockChain Web and Game Developer</strong> from Alicante, Spain 🇪🇸. Offering innovative and effective web solutions.
+        </p>
+        
+        <nav class="flex flex-wrap social-pills mt-8">
+          <a href="mailto:tvr9869@gmail.com">
+            <MailIcon class="size-4" />
+            Contact me
+            <div class="preview preview-contact">
+              Email me at tvr9869@gmail.com for any inquiries or opportunities.
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/tonivieirarubio-informatico/">
+            <LinkedInIcon class="size-4" />
+            LinkedIn
+            <div class="preview preview-linkedin">
+              <img src="/foto.jpg" alt={personalImageAlt} />
+              <div class="name">Toni Vieira Rubio</div>
+              <div class="title">Frontend and Blockchain Developer</div>
+            </div>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
