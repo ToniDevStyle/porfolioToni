@@ -1,5 +1,5 @@
 ---
-const personalImageAlt = "Miguel Ángel"
+const personalImageAlt = "Toni Vieira Rubio"
 import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
@@ -10,7 +10,7 @@ import Embed from '../components/Embed.astro';
   .dynamic-text {
     font-style: italic;
     font-size: 18px;
-    color: rgb(107, 90, 182);
+    color: rgb(191, 155, 13);
     animation: heartbeat 5s infinite;
     transform: rotate(-5deg);
     opacity: 1;
@@ -53,7 +53,7 @@ import Embed from '../components/Embed.astro';
   }
 
   .highlight {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #FACC13);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -134,51 +134,60 @@ import Embed from '../components/Embed.astro';
   }
 </style>
 
-<div class="max-w-7xl mx-auto">
-  
+
+<div class="max-w-7xl">
   <div class="content">
-    
-    <div class="flex flex-col md:flex-row gap-4 mb-4 items-start">
+    <div class="flex flex-col md:flex-row gap-6 mb-6 items-start">
+      <!-- Left Column -->
       <div class="flex flex-col items-center md:items-start">
-        <p class="dynamic-text mt-4">Psst... try dragging and dropping the card!</p>
+        <p class="dynamic-text">Psst... try dragging and rotating the card!</p>
         <div class="embed-wrapper">
-          
           <Embed />
-          
         </div>
-        <a
-          href="https://www.linkedin.com/in/tonivieirarubio-informatico/"
-          target="_blank"
-          rel="noopener"
-          class="flex items-center transition md:justify-center badge mt-4"
-        >
+        <a href="https://www.linkedin.com/in/tonivieirarubio-informatico/"
+           target="_blank"
+           rel="noopener"
+           class="flex items-center badge mt-4">
           <Badge>Available to work</Badge>
         </a>
-        
       </div>
-      <div class="flex-1">
-        <h1 class="text-5xl font-bold tracking-tight text-gray-800 sm:text-6xl dark:text-white">
-          Hello 👋, I am <span class="highlight">Toni <span class="emoji"></span></span>
-        </h1>
-        <p class="mt-6 text-2xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
-          <strong>Frontend and BlockChain Web and Game Developer</strong> from Alicante, Spain 🇪🇸. Offering innovative and effective web solutions.
+
+      <!-- Right Column -->
+      <div class="flex-1 flex flex-col gap-6">
+       <h1 class="text-5xl font-bold tracking-tight sm:text-6xl text-primary text-center">
+  Hello 👋, I am <span class="highlight">Toni <span class="emoji"></span></span>
+</h1>
+
+
+        <p class="text-2xl text-secondary mt-6">
+          👨‍💻 <strong>FullStack Developer & Tech Enthusiast</strong> from Alicante, Spain. I create innovative and effective web solutions.
         </p>
-        
-        <nav class="flex flex-wrap social-pills mt-8">
+
+        <!-- Extra Info Card -->
+        <div class="info-card mt-4">
+          <h2 class="text-xl font-semibold mb-2">💡 What I Do</h2>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>FullStack Development: React, Angular, Spring Boot, Java, AWS, Git, Docker</li>
+            <li>Databases: PostgreSQL, MongoDB</li>
+          </ul>
+        </div>
+
+        <!-- Social Pills -->
+        <nav class="flex flex-wrap social-pills mt-4 gap-4">
           <a href="mailto:tvr9869@gmail.com">
             <MailIcon class="size-4" />
             Contact me
             <div class="preview preview-contact">
-              Email me at tvr9869@gmail.com for any inquiries or opportunities.
+              Email me at <strong>tvr9869@gmail.com</strong> for inquiries or opportunities.
             </div>
           </a>
+
           <a href="https://www.linkedin.com/in/tonivieirarubio-informatico/">
             <LinkedInIcon class="size-4" />
             LinkedIn
             <div class="preview preview-linkedin">
-              <img src="/foto.jpg" alt={personalImageAlt} />
               <div class="name">Toni Vieira Rubio</div>
-              <div class="title">Frontend and Blockchain Developer</div>
+              <div class="title">FullStack Developer</div>
             </div>
           </a>
         </nav>

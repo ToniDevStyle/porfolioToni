@@ -10,7 +10,20 @@ const PROJECTS = [
       "Fitness library of all kinds to help people stay fit through an intuitive and easy-to-use user interface. Built from the ground up with React and MaterialUI.",
     link: "https://shellfitness.netlify.app/",
     github: "https://github.com/ToniDevStyle/ShellFitness",
-    image: "/projects/svgl.webp",
+    image: "/projects/rebajas.png",
+  },
+  {
+    title: "Shell Tracker",
+    description:
+      "Mobile app for real-time food tracking with meal logging, nutrient analysis, and user profile management. Built with React Native for cross-platform use, Firebase for authentication and live sync, and PostgreSQL for structured data storage.",
+    github: "https://github.com/ToniDevStyle/ShellTracker",
+    image: "/projects/deviceframes (4).png",
+  },
+  {
+    title: "BatoiPop",
+    description:
+      "Marketplace mobile app inspired by Wallapop. Features include user authentication, product listing, search and filtering, and chat between buyers and sellers. Backend powered by Spring Boot with MySQL, and Android Studio for the native app.",
+    image: "/projects/batoipop.png",
   },
 ];
 ---
@@ -22,8 +35,8 @@ const PROJECTS = [
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              alt={title}
+              class="object-cover w-full h-64 sm:h-80 md:h-96 transition duration-500 md:group-hover:scale-105"
               loading="lazy"
               src={image}
             />
@@ -34,34 +47,28 @@ const PROJECTS = [
           <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
             {title}
           </h3>
-          <div class="flex flex-wrap mt-2">
-            {
-               <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2`}>
-                React
-              </span>
-              <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2`}>
-                Material UI
-              </span>
-            }
-
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
-            </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-            </footer>
+          <div class="flex flex-wrap mt-2 gap-2">
+            
           </div>
+
+          <div class="mt-2 text-gray-700 dark:text-gray-400">
+            {description}
+          </div>
+
+          <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-6" />
+                Code
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+          </footer>
         </div>
       </article>
     ))
