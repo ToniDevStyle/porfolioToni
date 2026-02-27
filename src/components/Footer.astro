@@ -1,5 +1,5 @@
 ---
-const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -10,23 +10,34 @@ const currentYear = new Date().getFullYear()
   >
     <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90">
       © {currentYear}
-      <a class="hover:underline">ToniVR</a>.
+      <a class="hover:underline">Toni · InseraSystems</a>.
     </span>
 
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0 gap-x-4 relative"
     >
+      <li>
+        <a
+          href="https://inserasystems.com"
+          target="_blank"
+          class="hover:underline text-blue-400 hover:text-blue-300 font-medium"
+        >
+          inserasystems.com ↗
+        </a>
+      </li>
+
       <li class="relative group">
         <button
           class="hover:underline flex items-center gap-x-1 transition-transform duration-200 group-hover:-translate-x-1"
         >
           CV
           <svg class="w-3 h-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.586l3.71-3.396a.75.75 0 111.02 1.096l-4.25 3.893a.75.75 0 01-1.02 0l-4.25-3.893a.75.75 0 01-.02-1.06z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06-.02L10 10.586l3.71-3.396a.75.75 0 111.02 1.096l-4.25 3.893a.75.75 0 01-1.02 0l-4.25-3.893a.75.75 0 01-.02-1.06z"
+              clip-rule="evenodd"></path>
           </svg>
         </button>
-
-        <!-- Dropdown hacia arriba -->
         <div
           class="absolute bottom-full left-0 mb-1 w-28 bg-white dark:bg-gray-800 shadow-lg rounded-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all z-10"
         >
@@ -40,17 +51,16 @@ const currentYear = new Date().getFullYear()
             href="https://github.com/ToniDevStyle/CV/blob/main/ToniVieiraFullStackENGCV.pdf"
             class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
-            English
+            Inglés
           </a>
         </div>
       </li>
 
       <li>
-        <a id="contacto" href="mailto:tvr9869@gmail.com" class="hover:underline">Contact</a>
+        <a href="mailto:info@inserasystems.com" class="hover:underline"
+          >Contacto</a
+        >
       </li>
     </ul>
   </div>
 </footer>
-
-
-

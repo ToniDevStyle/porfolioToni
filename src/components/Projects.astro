@@ -3,74 +3,260 @@ import GitHub from "./icons/GitHub.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
-const PROJECTS = [
+const PROYECTOS = [
+  {
+    title: "FactoryFlow",
+    description:
+      "Sistema de visibilidad operativa industrial. Escalado automático de alertas (operador → supervisor → director) según duración de paradas, cálculo de OEE en tiempo real por turno, reportes ejecutivos automáticos en PDF todos los lunes a las 8:00. Sin hardware ni cambios de infraestructura. Desplegado en 48 horas.",
+    link: "https://inserasystems.com",
+    tags: ["n8n", "Google Sheets", "WhatsApp API", "Automatización"],
+    featured: true,
+  },
   {
     title: "Shell Fitness",
     description:
-      "Fitness library of all kinds to help people stay fit through an intuitive and easy-to-use user interface. Built from the ground up with React and MaterialUI.",
+      "Biblioteca de fitness de todo tipo para ayudar a las personas a mantenerse en forma mediante una interfaz intuitiva y fácil de usar. Construido desde cero con React y MaterialUI.",
     link: "https://shellfitness.netlify.app/",
     github: "https://github.com/ToniDevStyle/ShellFitness",
     image: "/projects/rebajas.png",
+    tags: ["React", "MaterialUI"],
   },
   {
     title: "Shell Tracker",
     description:
-      "Mobile app for real-time food tracking with meal logging, nutrient analysis, and user profile management. Built with React Native for cross-platform use, Firebase for authentication and live sync, and PostgreSQL for structured data storage.",
+      "Aplicación móvil para seguimiento de alimentos en tiempo real con registro de comidas, análisis de nutrientes y gestión de perfiles de usuario. Construida con React Native para uso multiplataforma, Firebase para autenticación y sincronización en vivo, y PostgreSQL para almacenamiento de datos estructurados.",
     github: "https://github.com/ToniDevStyle/ShellTracker",
     image: "/projects/deviceframes (4).png",
+    tags: ["React Native", "Firebase", "PostgreSQL"],
   },
   {
     title: "BatoiPop",
     description:
-      "Marketplace mobile app inspired by Wallapop. Features include user authentication, product listing, search and filtering, and chat between buyers and sellers. Backend powered by Spring Boot with MySQL, and Android Studio for the native app.",
+      "Aplicación móvil tipo marketplace inspirada en Wallapop. Funcionalidades: autenticación de usuarios, listado de productos, búsqueda y filtrado, y chat entre compradores y vendedores. Backend con Spring Boot y MySQL, app nativa con Android Studio.",
     image: "/projects/batoipop.png",
+    tags: ["Java", "Spring Boot", "Android Studio", "MySQL"],
   },
 ];
 ---
 
+<style>
+  .proyecto-destacado {
+    position: relative;
+    background: rgba(59, 130, 246, 0.03);
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    border-radius: 14px;
+    padding: 28px;
+    overflow: hidden;
+  }
+  .proyecto-destacado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa, transparent);
+  }
+  .badge-proyecto-destacado {
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .titulo-proyecto-destacado {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .desc-proyecto-destacado {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #9ca3af;
+    margin-bottom: 16px;
+    max-width: 560px;
+  }
+  .etiquetas-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 16px;
+  }
+  .etiqueta {
+    font-family: monospace;
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: rgba(59, 130, 246, 0.08);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    letter-spacing: 0.06em;
+  }
+  .etiqueta-gris {
+    background: rgba(255, 255, 255, 0.04);
+    color: #6b7280;
+    border-color: #374151;
+  }
+  .panel-proyecto-destacado {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.8;
+  }
+  .fila-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .fila-panel:last-child {
+    border-bottom: none;
+  }
+  .clave-panel {
+    color: #4b5563;
+  }
+  .valor-panel-verde {
+    color: #86efac;
+  }
+  .valor-panel-rojo {
+    color: #fca5a5;
+  }
+  .valor-panel-azul {
+    color: #60a5fa;
+  }
+  .punto-pulso {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    margin-right: 5px;
+    animation: pulso 1.5s ease-in-out infinite;
+  }
+  @keyframes pulso {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+</style>
+
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt={title}
-              class="object-cover w-full h-64 sm:h-80 md:h-96 transition duration-500 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2 gap-2">
-            
-          </div>
-
-          <div class="mt-2 text-gray-700 dark:text-gray-400">
-            {description}
-          </div>
-
-          <footer class="flex items-end justify-start mt-4 gap-x-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHub class="size-6" />
-                Code
-              </LinkButton>
-            )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="size-4" />
-                Preview
-              </LinkButton>
-            )}
-          </footer>
-        </div>
-      </article>
-    ))
+    PROYECTOS.map(
+      ({ image, title, description, link, github, tags, featured }) =>
+        featured ? (
+          <article class="proyecto-destacado">
+            <span class="badge-proyecto-destacado">
+              🚀 Proyecto principal · InseraSystems
+            </span>
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class="flex-1">
+                <h3 class="titulo-proyecto-destacado">{title}</h3>
+                <p class="desc-proyecto-destacado">{description}</p>
+                {tags && (
+                  <div class="etiquetas-proyecto">
+                    {tags.map((t) => (
+                      <span class="etiqueta">{t}</span>
+                    ))}
+                  </div>
+                )}
+                <div class="flex gap-3 flex-wrap">
+                  {link && (
+                    <LinkButton href={link}>
+                      <Link class="size-4" />
+                      Ver inserasystems.com
+                    </LinkButton>
+                  )}
+                </div>
+              </div>
+              <div class="panel-proyecto-destacado w-full md:w-64">
+                <div class="fila-panel">
+                  <span class="clave-panel">Estado</span>
+                  <span class="valor-panel-verde">
+                    <span class="punto-pulso" />
+                    Activo
+                  </span>
+                </div>
+                <div class="fila-panel">
+                  <span class="clave-panel">INY-01</span>
+                  <span class="valor-panel-verde">EN MARCHA</span>
+                </div>
+                <div class="fila-panel">
+                  <span class="clave-panel">INY-02</span>
+                  <span class="valor-panel-verde">EN MARCHA</span>
+                </div>
+                <div class="fila-panel">
+                  <span class="clave-panel">INY-03</span>
+                  <span class="valor-panel-rojo">PARADA 23min</span>
+                </div>
+                <div class="fila-panel">
+                  <span class="clave-panel">OEE turno</span>
+                  <span class="valor-panel-azul">78%</span>
+                </div>
+                <div class="fila-panel">
+                  <span class="clave-panel">Alerta</span>
+                  <span class="valor-panel-rojo">→ Supervisor</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        ) : (
+          <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2">
+              <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                <img
+                  alt={title}
+                  class="object-cover w-full h-64 sm:h-80 md:h-96 transition duration-500 md:group-hover:scale-105"
+                  loading="lazy"
+                  src={image}
+                />
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 md:max-w-lg">
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                {title}
+              </h3>
+              {tags && (
+                <div class="etiquetas-proyecto mt-2">
+                  {tags.map((t) => (
+                    <span class="etiqueta etiqueta-gris">{t}</span>
+                  ))}
+                </div>
+              )}
+              <div class="mt-2 text-gray-700 dark:text-gray-400">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {github && (
+                  <LinkButton href={github}>
+                    <GitHub class="size-6" />
+                    Código
+                  </LinkButton>
+                )}
+                {link && (
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    Vista previa
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
+          </article>
+        ),
+    )
   }
 </div>

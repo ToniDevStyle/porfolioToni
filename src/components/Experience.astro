@@ -1,43 +1,127 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCIAS = [
   {
-    date: "2025 - Present",
-    title: "Java Developer",
-    company: "NTT Data – Asisa Project | Alicante, Spain",
+    date: "2025 - Presente",
+    title: "Fundador · Automatización Industrial",
+    company: "InseraSystems | Alicante, España",
     description:
-      "Developed and maintained insurance applications using Java (versions 8–17) and Sisnet. Designed and executed SQL Server queries and stored procedures for data processing. Managed source code with Git, ensuring version control. Resolved incidents, implemented new features, and provided support in production and testing environments.",
+      "Agencia especializada en automatización industrial para el sector manufacturero. Diseño e implementación de sistemas de visibilidad operativa: escalado automático de alertas (operador → supervisor → director), cálculo de OEE en tiempo real, historial de incidencias y reportes ejecutivos automáticos en PDF. Producto principal: FactoryFlow — desplegado en 48h, sin hardware adicional requerido.",
+    highlight: true,
+  },
+  {
+    date: "2025 - Presente",
+    title: "Desarrollador Java",
+    company: "NTT Data – Proyecto Asisa | Alicante, España",
+    description:
+      "Desarrollo y mantenimiento de aplicaciones de seguros con Java (versiones 8–17) y Sisnet. Diseño y ejecución de consultas SQL Server y procedimientos almacenados para procesamiento de datos. Gestión de código con Git, asegurando control de versiones. Resolución de incidencias, implementación de nuevas funcionalidades y soporte en entornos de producción y pruebas.",
   },
   {
     date: "2024 - 2025",
-    title: "Full-Stack Developer",
-    company: "NTT Data – Mapfre Project | Alicante, Spain",
+    title: "Desarrollador Full-Stack",
+    company: "NTT Data – Proyecto Mapfre | Alicante, España",
     description:
-      "Built applications with Angular (frontend) and Spring Boot (backend) under a hexagonal architecture with the CQRS design pattern. Collaborated in an Agile Scrum team, delivering scalable solutions. Managed workflows with Git/Bitbucket and implemented CI/CD pipelines using Jenkins. Ensured code quality with Swagger and SonarQube, while deploying apps via Docker and AWS.",
+      "Desarrollo de aplicaciones con Angular (frontend) y Spring Boot (backend) bajo arquitectura hexagonal con patrón de diseño CQRS. Colaboración en equipo Agile Scrum, entregando soluciones escalables. Gestión de flujos de trabajo con Git/Bitbucket e implementación de pipelines CI/CD con Jenkins. Aseguramiento de la calidad del código con Swagger y SonarQube, despliegue de apps vía Docker y AWS.",
   },
   {
     date: "2023 - 2025",
-    title: "Full-Stack Developer",
-    company: "Freelance | Remote",
+    title: "Desarrollador Full-Stack",
+    company: "Freelance | Remoto",
     description:
-      "Designed and developed web applications end-to-end, from concept to deployment. Built responsive UIs with React, Angular, and Vanilla JavaScript. Implemented robust backends using Node.js and Spring Boot. Integrated REST APIs (custom and public) with relational databases (PostgreSQL and MySQL). Delivered scalable solutions tailored to client requirements.",
+      "Diseño y desarrollo de aplicaciones web de extremo a extremo, desde concepto hasta despliegue. Interfaces responsivas con React, Angular y JavaScript puro. Backends robustos con Node.js y Spring Boot. Integración de APIs REST con bases de datos relacionales (PostgreSQL y MySQL).",
   },
   {
-    date: "2022",
-    title: "RPA Developer (Intern)",
-    company: "Accenture – Repsol Project | Remote",
+    date: "2023",
+    title: "Desarrollador RPA (Prácticas)",
+    company: "Accenture – Proyecto Repsol | Remoto",
     description:
-      "Supported automation initiatives using Blue Prism, collaborating in all phases of the automation lifecycle—from identifying opportunities to bot deployment and maintenance. Worked in an Agile (Scrum) environment, ensuring iterative and high-quality deliverables.",
+      "Automatización de procesos críticos de negocio para Repsol usando Blue Prism. Cobertura de todo el ciclo de vida de la automatización — desde identificación de oportunidades hasta despliegue y mantenimiento de bots. Primera experiencia directa automatizando operaciones industriales a escala Fortune 500. Experiencia semilla de InseraSystems.",
+    badge: "🌱 Origen de InseraSystems",
   },
-]
+  {
+    date: "2023 - 2024",
+    title: "Operador de Extrusión",
+    company: "Smurfit Kappa | Ibi, España",
+    description:
+      "Trabajo en línea de producción industrial — turnos, presión operativa real. Contacto directo con sistemas de registro manual, traspasos de turno y gestión de incidencias en planta. Comprender la fricción del trabajo operativo desde dentro es la base del diseño de los sistemas de InseraSystems.",
+    badge: "🏭 Experiencia real en planta",
+  },
+  {
+    date: "2019 - 2021",
+    title: "Especialista en Producción",
+    company: "INDEN PHARMA PACKAGING | Ibi, España",
+    description:
+      "Especialista en líneas de producción farmacéutica con altos estándares de calidad y trazabilidad. Control de calidad, resolución de incidencias e informes de turno. Experiencia directa con puntos de dolor en la captura manual de datos que ahora automatiza InseraSystems.",
+    badge: "🏭 Experiencia real en planta",
+  },
+];
 ---
+
+<style>
+  .exp-destacado {
+    position: relative;
+    padding: 16px 18px;
+    background: rgba(59, 130, 246, 0.04);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .exp-destacado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa, transparent);
+    border-radius: 10px 10px 0 0;
+  }
+  .etiqueta-destacado {
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 6px;
+  }
+  .distintivo {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(34, 197, 94, 0.08);
+    color: #86efac;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    margin-top: 6px;
+  }
+</style>
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
-      <li class="">
-        <ExperienceItem {...experiencie} />
-      </li>
-    ))
+    EXPERIENCIAS.map((exp) =>
+      exp.highlight ? (
+        <li class="exp-destacado mb-8">
+          <div class="etiqueta-destacado">🚀 Proyecto actual · Fundador</div>
+          <ExperienceItem
+            date={exp.date}
+            title={exp.title}
+            company={exp.company}
+            description={exp.description}
+          />
+        </li>
+      ) : (
+        <li>
+          <ExperienceItem
+            date={exp.date}
+            title={exp.title}
+            company={exp.company}
+            description={exp.description}
+          />
+          {exp.badge && <span class="distintivo">{exp.badge}</span>}
+        </li>
+      ),
+    )
   }
 </ol>
