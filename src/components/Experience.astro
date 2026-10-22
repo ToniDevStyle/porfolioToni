@@ -3,57 +3,34 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCIAS = [
   {
-    date: "2025 - Presente",
-    title: "Fundador · Automatización Industrial",
-    company: "InseraSystems | Alicante, España",
+    date: "Feb. 2025 - Presente",
+    title: "Desarrollador Java · Pruebas y soporte",
+    company: "NTT Data – Proyecto Asisa | Alicante, España",
     description:
-      "Agencia especializada en automatización industrial para el sector manufacturero. Diseño e implementación de sistemas de visibilidad operativa: escalado automático de alertas (operador → supervisor → director), cálculo de OEE en tiempo real, historial de incidencias y reportes ejecutivos automáticos en PDF. Producto principal: FactoryFlow — desplegado en 48h, sin hardware adicional requerido.",
+      "Mantenimiento de aplicaciones de seguros con Java y Sisnet. Pruebas de APIs con Postman, depuración en Eclipse y consultas en SQL Server para localizar y corregir incidencias en entornos de pruebas y producción. Seguimiento del trabajo en Jira y control de versiones con Git.",
     highlight: true,
   },
   {
-    date: "2025 - Presente",
-    title: "Desarrollador Java",
-    company: "NTT Data – Proyecto Asisa | Alicante, España",
-    description:
-      "Desarrollo y mantenimiento de aplicaciones de seguros con Java (versiones 8–17) y Sisnet. Diseño y ejecución de consultas SQL Server y procedimientos almacenados para procesamiento de datos. Gestión de código con Git, asegurando control de versiones. Resolución de incidencias, implementación de nuevas funcionalidades y soporte en entornos de producción y pruebas.",
-  },
-  {
-    date: "2024 - 2025",
-    title: "Desarrollador Full-Stack",
+    date: "Sept. 2024 - Ene. 2025",
+    title: "Prácticas DAM · Desarrollo Full Stack",
     company: "NTT Data – Proyecto Mapfre | Alicante, España",
     description:
-      "Desarrollo de aplicaciones con Angular (frontend) y Spring Boot (backend) bajo arquitectura hexagonal con patrón de diseño CQRS. Colaboración en equipo Agile Scrum, entregando soluciones escalables. Gestión de flujos de trabajo con Git/Bitbucket e implementación de pipelines CI/CD con Jenkins. Aseguramiento de la calidad del código con Swagger y SonarQube, despliegue de apps vía Docker y AWS.",
+      "Prácticas del ciclo DAM en un equipo Scrum. Desarrollo de funcionalidades con Angular y Spring Boot, trabajo con Git/Bitbucket, pipelines de CI/CD en Jenkins y revisión de calidad del código con SonarQube.",
   },
   {
     date: "2023 - 2025",
-    title: "Desarrollador Full-Stack",
+    title: "Desarrollador web",
     company: "Freelance | Remoto",
     description:
-      "Diseño y desarrollo de aplicaciones web de extremo a extremo, desde concepto hasta despliegue. Interfaces responsivas con React, Angular y JavaScript puro. Backends robustos con Node.js y Spring Boot. Integración de APIs REST con bases de datos relacionales (PostgreSQL y MySQL).",
-  },
-  {
-    date: "2023",
-    title: "Desarrollador RPA (Prácticas)",
-    company: "Accenture – Proyecto Repsol | Remoto",
-    description:
-      "Automatización de procesos críticos de negocio para Repsol usando Blue Prism. Cobertura de todo el ciclo de vida de la automatización — desde identificación de oportunidades hasta despliegue y mantenimiento de bots. Primera experiencia directa automatizando operaciones industriales a escala Fortune 500. Experiencia semilla de InseraSystems.",
-    badge: "🌱 Origen de InseraSystems",
-  },
-  {
-    date: "2023 - 2024",
-    title: "Operador de Extrusión",
-    company: "Smurfit Kappa | Ibi, España",
-    description:
-      "Trabajo en línea de producción industrial — turnos, presión operativa real. Contacto directo con sistemas de registro manual, traspasos de turno y gestión de incidencias en planta. Comprender la fricción del trabajo operativo desde dentro es la base del diseño de los sistemas de InseraSystems.",
-    badge: "🏭 Experiencia real en planta",
+      "Webs para pequeños clientes, desde la idea hasta la publicación: diseño adaptable a móvil, maquetación con HTML, CSS, JavaScript y React, y despliegue en Netlify.",
   },
   {
     date: "2019 - 2021",
-    title: "Especialista en Producción",
-    company: "INDEN PHARMA PACKAGING | Ibi, España",
+    title: "Especialista en producción",
+    company: "INDEN Pharma Packaging | Ibi, España",
     description:
-      "Especialista en líneas de producción farmacéutica con altos estándares de calidad y trazabilidad. Control de calidad, resolución de incidencias e informes de turno. Experiencia directa con puntos de dolor en la captura manual de datos que ahora automatiza InseraSystems.",
-    badge: "🏭 Experiencia real en planta",
+      "Líneas de envasado farmacéutico con altos estándares de calidad y trazabilidad: control de calidad, resolución de incidencias e informes de turno. De aquí viene mi forma de pensar en calidad y en procesos.",
+    badge: "🏭 Experiencia en planta",
   },
 ];
 ---
@@ -103,7 +80,7 @@ const EXPERIENCIAS = [
     EXPERIENCIAS.map((exp) =>
       exp.highlight ? (
         <li class="exp-destacado mb-8">
-          <div class="etiqueta-destacado">🚀 Proyecto actual · Fundador</div>
+          <div class="etiqueta-destacado">💼 Puesto actual</div>
           <ExperienceItem
             date={exp.date}
             title={exp.title}

@@ -5,11 +5,10 @@ import LinkButton from "./LinkButton.astro";
 
 const PROYECTOS = [
   {
-    title: "FactoryFlow",
+    title: "Agente personal de IA",
     description:
-      "Sistema de visibilidad operativa industrial. Escalado automático de alertas (operador → supervisor → director) según duración de paradas, cálculo de OEE en tiempo real por turno, reportes ejecutivos automáticos en PDF todos los lunes a las 8:00. Sin hardware ni cambios de infraestructura. Desplegado en 48 horas.",
-    link: "https://inserasystems.com",
-    tags: ["n8n", "Google Sheets", "WhatsApp API", "Automatización"],
+      "Asistente que funciona 24/7 en un Mac mini y uso a diario desde Telegram. Recuerda el contexto, lleva mis finanzas y gastos compartidos, transcribe notas de voz en local, pasa las tareas al calendario del iPhone, me prepara un resumen diario de noticias y hace copias de seguridad cifradas. Diseñado con la seguridad en mente: las búsquedas web van en una sesión aislada y no envía nada en mi nombre sin mi aprobación.",
+    tags: ["Python", "Claude", "Telegram", "Whisper", "AppleScript", "launchd"],
     featured: true,
   },
   {
@@ -161,7 +160,7 @@ const PROYECTOS = [
         featured ? (
           <article class="proyecto-destacado">
             <span class="badge-proyecto-destacado">
-              🚀 Proyecto principal · InseraSystems
+              🚀 Proyecto principal · En uso diario
             </span>
             <div class="flex flex-col md:flex-row gap-8 items-start">
               <div class="flex-1">
@@ -174,42 +173,34 @@ const PROYECTOS = [
                     ))}
                   </div>
                 )}
-                <div class="flex gap-3 flex-wrap">
-                  {link && (
-                    <LinkButton href={link}>
-                      <Link class="size-4" />
-                      Ver inserasystems.com
-                    </LinkButton>
-                  )}
-                </div>
               </div>
               <div class="panel-proyecto-destacado w-full md:w-64">
                 <div class="fila-panel">
                   <span class="clave-panel">Estado</span>
                   <span class="valor-panel-verde">
                     <span class="punto-pulso" />
-                    Activo
+                    Activo 24/7
                   </span>
                 </div>
                 <div class="fila-panel">
-                  <span class="clave-panel">INY-01</span>
-                  <span class="valor-panel-verde">EN MARCHA</span>
+                  <span class="clave-panel">Equipo</span>
+                  <span class="valor-panel-azul">Mac mini M2</span>
                 </div>
                 <div class="fila-panel">
-                  <span class="clave-panel">INY-02</span>
-                  <span class="valor-panel-verde">EN MARCHA</span>
+                  <span class="clave-panel">Canal</span>
+                  <span class="valor-panel-azul">Telegram</span>
                 </div>
                 <div class="fila-panel">
-                  <span class="clave-panel">INY-03</span>
-                  <span class="valor-panel-rojo">PARADA 23min</span>
+                  <span class="clave-panel">Voz</span>
+                  <span class="valor-panel-verde">Whisper local</span>
                 </div>
                 <div class="fila-panel">
-                  <span class="clave-panel">OEE turno</span>
-                  <span class="valor-panel-azul">78%</span>
+                  <span class="clave-panel">Copias</span>
+                  <span class="valor-panel-verde">Cifradas</span>
                 </div>
                 <div class="fila-panel">
-                  <span class="clave-panel">Alerta</span>
-                  <span class="valor-panel-rojo">→ Supervisor</span>
+                  <span class="clave-panel">Envíos</span>
+                  <span class="valor-panel-azul">Solo con mi OK</span>
                 </div>
               </div>
             </div>

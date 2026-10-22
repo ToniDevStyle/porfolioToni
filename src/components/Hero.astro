@@ -1,6 +1,6 @@
 ---
 import Badge from "@/components/Badge.astro";
-import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import Embed from "../components/Embed.astro";
 ---
@@ -19,7 +19,7 @@ import Embed from "../components/Embed.astro";
 
   @media (max-width: 900px) {
     .hero-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 48px;
     }
     .col-divider {
@@ -30,6 +30,11 @@ import Embed from "../components/Embed.astro";
   /* ─────────────────────────────────────────────
      COLUMNA IZQUIERDA — Industrial + card
   ───────────────────────────────────────────── */
+  .col-left,
+  .col-right {
+    min-width: 0;
+  }
+
   .col-left {
     display: flex;
     flex-direction: column;
@@ -375,25 +380,25 @@ import Embed from "../components/Embed.astro";
          COLUMNA IZQUIERDA
     ════════════════════════════ -->
     <div class="col-left">
-      <div class="eyebrow">Automatización industrial</div>
+      <div class="eyebrow">QA · Automatización · IA aplicada</div>
 
       <h1 class="headline-industrial text-gray-900 dark:text-white">
-        DE TRABAJAR<br />
-        EN <span class="word-outline">PLANTA</span><br />
-        A <span class="word-blue">AUTOMATIZARLA.</span>
+        PRUEBO.<br />
+        <span class="word-outline">AUTOMATIZO.</span><br />
+        <span class="word-blue">APLICO IA.</span>
       </h1>
 
       <p class="sub-industrial text-gray-500 dark:text-gray-400">
-        Trabajé en líneas de producción industrial.<br />
-        Después aprendí a construir software.<br />
+        Trabajo en NTT Data probando, depurando y manteniendo aplicaciones.<br />
+        Antes trabajé en producción industrial.<br />
         <strong class="text-gray-800 dark:text-gray-200">
-          Ahora conecto las dos cosas.
+          Ahora construyo automatizaciones con IA que uso cada día.
         </strong>
       </p>
 
       <div class="btn-row">
-        <a href="https://inserasystems.com" target="_blank" class="btn-primary">
-          Ver InseraSystems
+        <a href="#proyectos" class="btn-primary">
+          Ver mi agente de IA
           <svg
             width="13"
             height="13"
@@ -405,16 +410,18 @@ import Embed from "../components/Embed.astro";
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
         </a>
-        <a href="#proyectos" class="btn-ghost">Ver FactoryFlow →</a>
+        <a href="/cv/Toni-Vieira-Rubio-CV.pdf" target="_blank" class="btn-ghost"
+          >Descargar CV →</a
+        >
       </div>
 
       <div class="insera-card">
-        <div class="insera-card-label">🏭 Por qué InseraSystems</div>
+        <div class="insera-card-label">🏭 Por qué yo</div>
         <p class="insera-card-text">
-          La mayoría de consultores nunca han pisado una planta como
-          trabajadores.
-          <strong>Yo sí — Smurfit Kappa, INDEN Pharma.</strong>
-          Eso cambia completamente cómo diseñas los sistemas.
+          Antes de programar trabajé en líneas de producción.
+          <strong>Sé cómo falla un proceso manual en el día a día.</strong>
+          Eso me ayuda a probar software pensando en quien lo usa y a ver qué
+          merece la pena automatizar.
         </p>
         <a href="#sobre-mi" class="insera-card-link">Leer mi historia →</a>
       </div>
@@ -425,26 +432,18 @@ import Embed from "../components/Embed.astro";
           <Embed />
         </div>
         <div class="badge-row">
-          <a
-            href="https://www.linkedin.com/in/tonivieirarubio-informatico/"
-            target="_blank"
-            rel="noopener"
-          >
-            <Badge>Available to work</Badge>
+          <a href="mailto:tvr9869@gmail.com">
+            <Badge>Disponible para trabajar</Badge>
           </a>
         </div>
         <nav class="social-row">
-          <a href="mailto:info@inserasystems.com">
+          <a href="mailto:tvr9869@gmail.com">
             <MailIcon class="size-3" />
-            info@inserasystems.com
+            tvr9869@gmail.com
           </a>
-          <a
-            href="https://www.linkedin.com/in/tonivieirarubio-informatico/"
-            target="_blank"
-            rel="noopener"
-          >
-            <LinkedInIcon class="size-3" />
-            LinkedIn
+          <a href="https://github.com/ToniDevStyle" target="_blank" rel="noopener">
+            <GitHubIcon class="size-3" />
+            GitHub
           </a>
         </nav>
       </div>
@@ -454,48 +453,46 @@ import Embed from "../components/Embed.astro";
          COLUMNA DERECHA
     ════════════════════════════ -->
     <div class="col-right">
-      <div class="eyebrow-dev">Full Stack Developer · Senior</div>
+      <div class="eyebrow-dev">QA · Soporte de aplicaciones · Automatización</div>
 
       <h2 class="headline-dev">
-        <span class="dim">JAVA.</span><br />
-        <span class="mid">SPRING.</span><br />
-        <span class="light">REACT.</span>
+        <span class="dim">POSTMAN.</span><br />
+        <span class="mid">SQL.</span><br />
+        <span class="light">PYTHON.</span>
       </h2>
 
       <p class="sub-dev">
-        2+ años en NTT Data y Accenture construyendo sistemas enterprise con
-        microservicios y arquitectura hexagonal.
+        En NTT Data desde 2024 (Mapfre y Asisa): pruebas de APIs, depuración en
+        Java, consultas SQL Server, CI/CD y resolución de incidencias.
       </p>
 
       <!-- Stack organizado por categoría -->
       <div class="pills-group">
         <div class="pills-row">
+          <span class="pills-row-label">Calidad</span>
+          <span class="pill hi">Postman</span>
+          <span class="pill hi">Jira</span>
+          <span class="pill">SonarQube</span>
+          <span class="pill">Jenkins</span>
+        </div>
+        <div class="pills-row">
           <span class="pills-row-label">Backend</span>
           <span class="pill hi">Java</span>
-          <span class="pill hi">Spring Boot</span>
-          <span class="pill hi">Microservicios</span>
-          <span class="pill">Kafka</span>
-          <span class="pill">JPA</span>
+          <span class="pill hi">SQL Server</span>
+          <span class="pill">Spring Boot</span>
+          <span class="pill">Git</span>
         </div>
         <div class="pills-row">
           <span class="pills-row-label">Frontend</span>
-          <span class="pill">React</span>
           <span class="pill">Angular</span>
-          <span class="pill">TypeScript</span>
-          <span class="pill">React Native</span>
+          <span class="pill">React</span>
+          <span class="pill">HTML/CSS/JS</span>
         </div>
         <div class="pills-row">
-          <span class="pills-row-label">Infra</span>
-          <span class="pill">AWS</span>
-          <span class="pill">Docker</span>
-          <span class="pill">Jenkins</span>
-          <span class="pill">SonarQube</span>
-        </div>
-        <div class="pills-row">
-          <span class="pills-row-label">Auto</span>
-          <span class="pill hi">n8n</span>
+          <span class="pills-row-label">IA</span>
+          <span class="pill hi">Python</span>
+          <span class="pill hi">Claude</span>
           <span class="pill">Blue Prism</span>
-          <span class="pill">Sheets API</span>
         </div>
       </div>
 
@@ -505,21 +502,20 @@ import Embed from "../components/Embed.astro";
       <div class="stats-row">
         <div class="stat">
           <div class="stat-num">2<span>+</span></div>
-          <div class="stat-lbl">años enterprise</div>
+          <div class="stat-lbl">años en NTT Data</div>
         </div>
         <div class="stat">
-          <div class="stat-num">2<span>+</span></div>
-          <div class="stat-lbl">años en planta</div>
+          <div class="stat-num">8,07</div>
+          <div class="stat-lbl">nota media DAM</div>
         </div>
         <div class="stat">
-          <div class="stat-num">48<span>h</span></div>
-          <div class="stat-lbl">deploy FactoryFlow</div>
+          <div class="stat-num">24<span>/7</span></div>
+          <div class="stat-lbl">agente IA en marcha</div>
         </div>
       </div>
 
       <div class="col-divider"></div>
 
-      <!-- NTT Data como credencial visible -->
       <div style="display:flex;flex-direction:column;gap:8px">
         <div
           style="font-family:monospace;font-size:9px;color:#374151;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px"
@@ -532,16 +528,16 @@ import Embed from "../components/Embed.astro";
         >
           <div>
             <div style="font-size:13px;font-weight:600;color:#d1d5db">
-              NTT Data
+              NTT Data · Asisa
             </div>
             <div
               style="font-family:monospace;font-size:10px;color:#60a5fa;margin-top:1px"
             >
-              Java & Full Stack · Mapfre / Asisa
+              Java · SQL Server · Pruebas y soporte
             </div>
           </div>
           <div style="font-family:monospace;font-size:9px;color:#374151">
-            2024 – hoy
+            2025 – hoy
           </div>
         </div>
 
@@ -550,16 +546,16 @@ import Embed from "../components/Embed.astro";
         >
           <div>
             <div style="font-size:13px;font-weight:600;color:#d1d5db">
-              Accenture
+              NTT Data · Mapfre
             </div>
             <div
               style="font-family:monospace;font-size:10px;color:#f59e0b;margin-top:1px"
             >
-              RPA Developer · Repsol
+              Prácticas DAM · Angular y Spring Boot
             </div>
           </div>
           <div style="font-family:monospace;font-size:9px;color:#374151">
-            2023
+            2024 – 2025
           </div>
         </div>
 
@@ -568,16 +564,16 @@ import Embed from "../components/Embed.astro";
         >
           <div>
             <div style="font-size:13px;font-weight:600;color:#d1d5db">
-              InseraSystems
+              Proyecto propio
             </div>
             <div
               style="font-family:monospace;font-size:10px;color:#34d399;margin-top:1px"
             >
-              Fundador · Automatización industrial
+              Agente personal de IA · Python
             </div>
           </div>
           <div style="font-family:monospace;font-size:9px;color:#374151">
-            2025 →
+            2026 →
           </div>
         </div>
       </div>
